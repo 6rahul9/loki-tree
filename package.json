@@ -31,6 +31,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "locomotive-scroll": "^3.6.1",
     "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
