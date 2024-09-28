@@ -13,24 +13,24 @@
     "babel-loader": "^8.3.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.3.0",
-    "copy-webpack-plugin": "^5.1.2",
-    "css-loader": "^3.6.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
     "cssnano": "^4.1.11",
     "custom-event-polyfill": "^1.0.7",
     "dat.gui": "^0.7.9",
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.4.1",
-    "file-loader": "^4.3.0",
+    "file-loader": "^6.2.0",
     "gsap": "^2.1.3",
     "hammerjs": "^2.0.8",
     "handlebars": "^4.7.8",
     "handlebars-layouts": "^3.1.4",
-    "handlebars-webpack-plugin": "github:mitchheddles/handlebars-webpack-plugin#478592b",
-    "html-webpack-plugin": "^3.2.0",
+    "handlebars-webpack-plugin": "^2.2.1",
+    "html-webpack-plugin": "^5.6.0",
     "ignore-loader": "^0.1.2",
     "imagemin-webpack-plugin": "^2.4.2",
     "locomotive-scroll": "^3.6.1",
-    "mini-css-extract-plugin": "^0.8.2",
+    "mini-css-extract-plugin": "^2.9.1",
     "node-sass": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -40,10 +40,12 @@
     "webpack-merge": "^5.10.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+     
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && cross-env NODE_ENV=development webpack-dev-server --open --config webpack.dev.js",
+    "prestart": "npm run clean",
+      "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "prebuild": "npm run clean",
+    "clean": "rimraf build generated"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +67,10 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "postcss-loader": "^8.1.1",
+    "sass-loader": "^16.0.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   }
